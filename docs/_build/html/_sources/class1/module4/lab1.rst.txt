@@ -15,7 +15,7 @@ The Service Discovery iApp will automatically discover and populate nodes in the
 Navigate to iApps => Application Services. Create a new iApp deployment:
 
 - Name: service_discovery
-- Template: choos f5.service_discovery from the dropdown.
+- Template: choose f5.service_discovery from the dropdown.
 
 Click [Finished}
 

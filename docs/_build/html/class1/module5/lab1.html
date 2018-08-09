@@ -140,8 +140,8 @@
 </pre></div>
 </div>
 <p>Copy your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY values. <strong>Save in notepad or your preferred text editor / note taking method for later use.</strong></p>
-<p>Create a new cloud_logger iApp. HTTPS to the Configuration Utiltiy (Web UI) of Big-IP1 (assumming that is the ACTIVE device and not STANDBY).</p>
-<p>iApps =&gt; Application Srvices =&gt; Name: <cite>cloudwatch</cite>. Template: <cite>f5.cloud_logger.v1.0.0</cite>. Click [Finished].</p>
+<p>Create a new cloud_logger iApp. HTTPS to the Configuration Utility (Web UI) of Big-IP1 (assuming that is the ACTIVE device and not STANDBY).</p>
+<p>iApps =&gt; Application Services =&gt; Name: <cite>cloudwatch</cite>. Template: <cite>f5.cloud_logger.v1.0.0</cite>. Click [Finished].</p>
 <a class="reference internal image-reference" href="../../_images/4_create_iapp.png"><img alt="../../_images/4_create_iapp.png" src="../../_images/4_create_iapp.png" style="width: 960.0px; height: 540.0px;" /></a>
 <a class="reference internal image-reference" href="../../_images/5_create_iapp.png"><img alt="../../_images/5_create_iapp.png" src="../../_images/5_create_iapp.png" style="width: 960.0px; height: 540.0px;" /></a>
 <table border="1" class="docutils">
@@ -173,7 +173,7 @@
 <tr class="row-odd"><td>What is the AWS CloudWatch Logs group name?</td>
 <td>log group name i.e. user55labcom</td>
 </tr>
-<tr class="row-even"><td>What is the AWS CloudWatrch Logs group’s stream name?</td>
+<tr class="row-even"><td>What is the AWS CloudWatch Logs group’s stream name?</td>
 <td>log-stream</td>
 </tr>
 <tr class="row-odd"><td>Do you want to enable LTM Request logging?</td>
@@ -188,13 +188,13 @@
 <a class="reference internal image-reference" href="../../_images/7_cloud_logging_iapp_created.png"><img alt="../../_images/7_cloud_logging_iapp_created.png" src="../../_images/7_cloud_logging_iapp_created.png" style="width: 960.0px; height: 540.0px;" /></a>
 <p>HTTPS to the Configuration Utility (Web UI) of Big-IP2 (if that is the standby). Look in the upper left-hand corner. Confirm you are on the STANDBY. All of the iApp changes are kept in sync between active and standby devices.</p>
 <a class="reference internal image-reference" href="../../_images/8_standby_iapp_sync.png"><img alt="../../_images/8_standby_iapp_sync.png" src="../../_images/8_standby_iapp_sync.png" style="width: 960.0px; height: 540.0px;" /></a>
-<p>HTTPS to the Configuration Utiltiy (Web UI) of Big-IP1 (assumming that is the ACTIVE device and not STANDBY).</p>
+<p>HTTPS to the Configuration Utility (Web UI) of Big-IP1 (assuming that is the ACTIVE device and not STANDBY).</p>
 <p>iApps =&gt; Application Services =&gt; virtual_server1.</p>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
 <p class="last">Before completing the next few steps, DISABLE STRICT UPDATES for the f5.tcp.v1.0.0rc2 iApp named virtual_server1 in our example.</p>
 </div>
-<p>Local Traffic =&gt; Virutal Servers =&gt; virtual_server1_vs.10.0.1.x.</p>
+<p>Local Traffic =&gt; Virtual Servers =&gt; virtual_server1_vs.10.0.1.x.</p>
 <ul class="simple">
 <li>Choose “Advanced” from the dropdown.</li>
 <li>Select SSL Profile(Client): clientssl</li>
@@ -206,7 +206,7 @@
 <a class="reference internal image-reference" href="../../_images/10_virtual_advanced.png"><img alt="../../_images/10_virtual_advanced.png" src="../../_images/10_virtual_advanced.png" style="width: 960.0px; height: 540.0px;" /></a>
 <a class="reference internal image-reference" href="../../_images/11_request_logging_profile.png"><img alt="../../_images/11_request_logging_profile.png" src="../../_images/11_request_logging_profile.png" style="width: 960.0px; height: 540.0px;" /></a>
 <a class="reference internal image-reference" href="../../_images/12_1st_virtual_update.png"><img alt="../../_images/12_1st_virtual_update.png" src="../../_images/12_1st_virtual_update.png" style="width: 960.0px; height: 540.0px;" /></a>
-<p>Do the same for the second virtual server. Local Traffic =&gt; Virutal Servers =&gt; virtual_server1_vs.10.0.1.x.</p>
+<p>Do the same for the second virtual server. Local Traffic =&gt; Virtual Servers =&gt; virtual_server1_vs.10.0.1.x.</p>
 <ul class="simple">
 <li>Choose “Advanced” from the dropdown.</li>
 <li>Select SSL Profile(Client): clientssl</li>
@@ -224,13 +224,17 @@
 <a class="reference internal image-reference" href="../../_images/16_elastic_ip_for_testing.png"><img alt="../../_images/16_elastic_ip_for_testing.png" src="../../_images/16_elastic_ip_for_testing.png" style="width: 960.0px; height: 540.0px;" /></a>
 <p>HTTPS to the Elastic IP to test request logging. Refresh with [F5] key for 15 seconds to generate a modest amount of traffic.</p>
 <a class="reference internal image-reference" href="../../_images/17_refresh_https.png"><img alt="../../_images/17_refresh_https.png" src="../../_images/17_refresh_https.png" style="width: 960.0px; height: 540.0px;" /></a>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Some lab testers reported an incompatibility issue with Mozilla Firefox on Linux and the AWS CloudWatch console. If Firefox doesn’t render the CloudWatch console, switch to Google Chrome for this part of the lab.</p>
+</div>
 <p>From the AWS Console, Services =&gt; Management Tools =&gt; CloudWatch =&gt; Log Groups. Select your log group and log-stream.</p>
 <a class="reference internal image-reference" href="../../_images/18_log-stream.png"><img alt="../../_images/18_log-stream.png" src="../../_images/18_log-stream.png" style="width: 960.0px; height: 540.0px;" /></a>
 <p>You will see the http request logs.</p>
 <a class="reference internal image-reference" href="../../_images/18_log-stream_logs.png"><img alt="../../_images/18_log-stream_logs.png" src="../../_images/18_log-stream_logs.png" style="width: 960.0px; height: 540.0px;" /></a>
 <p>Expand a log entry to see more detail.</p>
 <a class="reference internal image-reference" href="../../_images/19_log-stream_expand.png"><img alt="../../_images/19_log-stream_expand.png" src="../../_images/19_log-stream_expand.png" style="width: 960.0px; height: 540.0px;" /></a>
-<p>Copy the CLIENT_IP of a reuqest and use this CLIENT_IP in the “Filter events” search filter. In production you would filter search results by attributes such as CLIENT-IP to home in on relevant logs.</p>
+<p>Copy the CLIENT_IP of a request and use this CLIENT_IP in the “Filter events” search filter. In production you would filter search results by attributes such as CLIENT-IP to home in on relevant logs.</p>
 <a class="reference internal image-reference" href="../../_images/20_log-stream_filter1.png"><img alt="../../_images/20_log-stream_filter1.png" src="../../_images/20_log-stream_filter1.png" style="width: 960.0px; height: 540.0px;" /></a>
 <a class="reference internal image-reference" href="../../_images/21_log-stream_filter2.png"><img alt="../../_images/21_log-stream_filter2.png" src="../../_images/21_log-stream_filter2.png" style="width: 960.0px; height: 540.0px;" /></a>
 </div>

@@ -24,7 +24,7 @@ Login to the active BIG-IP Autoscale Instance MGMT IP **on port 8443** configura
 
    lab-info
 
-In the Big-IP Configuration utility (Web UI) navigate to Security -> Application Security -> Security Policies -> Active Polices. A "linux-low" policy was deployed via CloudFormation template and is in Enforcment Mode: Blocking.
+In the Big-IP Configuration utility (Web UI) navigate to Security -> Application Security -> Security Policies -> Active Polices. A "linux-low" policy was deployed via CloudFormation template and is in Enforcement Mode: Blocking.
 
 .. image:: ./images/waf-policy.png
   :scale: 50%

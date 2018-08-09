@@ -51,7 +51,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.4. Create a Virtual Server to Protect your Web Applications" href="../module4/module4.html" />
+    <link rel="next" title="2.4. Extending and Securing your Cloud" href="../module4/module4.html" />
     <link rel="prev" title="2.3. Explore the F5 Big-IP Virtual Editions Deployed" href="module3.html" />
   </head><body>
   <div id="clouddocs-header"></div>
@@ -89,14 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Infrastructure As Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">2.2. Exploring AWS</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="module3.html">2.3. Explore the F5 Big-IP Virtual Editions Deployed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">2.4. Create a Virtual Server to Protect your Web Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">2.5. Declarative Virtual Server with Application Services Extension 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. F5 Networks IPSec VPN to AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module7/module7.html">2.7. Big-IQ 6.0 and Application Templates for AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module8/module8.html">2.8. Big-IP Cloud Edition:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module9/module9.html">2.9. Create a Service Scaling Group Application:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_10/module_10.html">2.10. Test Autoscaling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_11/module_11.html">2.11. Clean up environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">2.4. Extending and Securing your Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">2.5. Logging to CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. Autoscale WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module7/module7.html">2.7. Clean Up Environment</a></li>
 </ul>
 </li>
 </ul>
@@ -166,7 +162,7 @@ reset-password z.z.z.z
 <a class="reference internal image-reference" href="../../_images/8_waf_virtual_server.png"><img alt="../../_images/8_waf_virtual_server.png" src="../../_images/8_waf_virtual_server.png" style="width: 960.0px; height: 540.0px;" /></a>
 <p>The “linux-low” security policy is attached to this virtual server.</p>
 <a class="reference internal image-reference" href="../../_images/9_waf_policy_enabled.png"><img alt="../../_images/9_waf_policy_enabled.png" src="../../_images/9_waf_policy_enabled.png" style="width: 960.0px; height: 540.0px;" /></a>
-<p>From the Super-NetOps terminal run “lab-info” and copy the value for WAF ELB -&gt; URL. Open a new browser tab and HTTPS to the WAF ELB URL. Your sample applicaiton is protected behind an F5 WAF.</p>
+<p>From the Super-NetOps terminal run “lab-info” and copy the value for WAF ELB -&gt; URL. Open a new browser tab and HTTPS to the WAF ELB URL. Your sample application is protected behind an F5 WAF.</p>
 <a class="reference internal image-reference" href="../../_images/11_terraform_waf_url.png"><img alt="../../_images/11_terraform_waf_url.png" src="../../_images/11_terraform_waf_url.png" style="width: 960.0px; height: 540.0px;" /></a>
 <a class="reference internal image-reference" href="../../_images/12_https_waf.png"><img alt="../../_images/12_https_waf.png" src="../../_images/12_https_waf.png" style="width: 960.0px; height: 540.0px;" /></a>
 <p>Login to either Big-IP1 or Big-IP2. Main =&gt; iApps =&gt; Application Services. The Cross-AZ HA Big-IP has been deployed with the F5 AWS HA iApp.</p>
@@ -182,7 +178,7 @@ reset-password z.z.z.z
         <a href="module3.html" title="2.3. Explore the F5 Big-IP Virtual Editions Deployed" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="../module4/module4.html" title="2.4. Create a Virtual Server to Protect your Web Applications" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="../module4/module4.html" title="2.4. Extending and Securing your Cloud" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

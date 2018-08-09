@@ -2,7 +2,7 @@ Deploy an AWS High-Availability-aware virtual server across two Availability Zon
 ----------------------------------------------------------------------------------
 
 Login to the active Big-IP1 Configuration utility (Web UI).
-The "HA_Across_AZs" iApp will alerady be deployed in the Common partition.
+The "HA_Across_AZs" iApp will already be deployed in the Common partition.
 
 
 Download the latest tcp iApp template from https://s3.amazonaws.com/f5-public-cloud/f5.tcp.v1.0.0rc2.tmpl.
@@ -23,7 +23,7 @@ iApps -> Templates -> import. Import f5.tcp.v1.0.0rc2.tmpl to the primary BigIP.
 
 Deploy an iApp using the f5.tcp.v1.0.0rc2.tmpl template.
 
-iApps => Application Serves => Select f5.tcp.v1.0.0rc2 template from teh dropdown. Name: virtual_server_1.
+iApps => Application Serves => Select f5.tcp.v1.0.0rc2 template from the dropdown. Name: virtual_server_1.
 
 Configure iApp: Select "Advanced" from "Template Selection".
 
@@ -62,7 +62,7 @@ From the Super-NetOps terminal. Invoke ``terraform output`` and copy the value f
 .. image:: ./images/8_vs_finish.png
   :scale: 50%
 
-The iApp will create two virtual servers on *both* Big-IP's. The iApp deployment on Big-IP1 will automatically and immediatly sync to Big-IP2.
+The iApp will create two virtual servers on *both* Big-IP's. The iApp deployment on Big-IP1 will automatically and immediately sync to Big-IP2.
 
 .. image:: ./images/9_two_vs.png
   :scale: 50%

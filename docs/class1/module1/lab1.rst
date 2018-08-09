@@ -170,7 +170,7 @@ When you clone the git repository, you are pulling down a current version of the
   - *outputs.tf* - Any variable in the outputs.tf file can be rendered to the console with 'terraform output' and is exposed to other command line tools.
   - *vars.tf* - Variables for terraform.
 
-- Handy utilities to help move the lab along with minimum fuss: *password-reset*.
+- Handy utilities to help move the lab along with minimum fuss: *lab-info*, *password-reset*.
 
 The start script takes care of all of the prerequisites to standing up an AWS environment. Precisely:
 

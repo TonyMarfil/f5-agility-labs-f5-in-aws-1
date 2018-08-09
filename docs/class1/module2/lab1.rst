@@ -47,7 +47,7 @@ Navigate to Services => Management Tools => CloudFormation. In the search field 
 .. image:: ./images/3_cloudformation_stacks.png
   :scale: 50%
 
-- ha-userxxf5labcom-vpc-xxxxxxxx - Is the Cross-Availabilty-Zone deployment well documented in the F5 Github repository:
+- ha-userxxf5labcom-vpc-xxxxxxxx - Is the Cross-Availability-Zone deployment well documented in the F5 Github repository:
   https://github.com/F5Networks/f5-aws-cloudformation/tree/master/supported/failover/across-net/via-api/3nic/existing-stack/bigiq
 
 .. image:: ./images/cft_cross-az-ha.png
@@ -59,7 +59,7 @@ Navigate to Services => Management Tools => CloudFormation. In the search field 
 .. image:: ./images/cft_autoscale_waf.png
   :scale: 50%
 
-- Click the Events tab. The F5 CloudFormation template records every succesfull or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.
+- Click the Events tab. The F5 CloudFormation template records every successful or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.
 
 .. image:: ./images/5_cft_events.png
   :scale: 50%
@@ -69,17 +69,17 @@ Navigate to Services => Management Tools => CloudFormation. In the search field 
 .. image:: ./images/6_cft_outputs.png
   :scale: 50%
 
-- Click on the Resources tab. Here we see a map (resource type to unqique id) of all the AWS resources that were deployed from the CloudFormation template.
+- Click on the Resources tab. Here we see a map (resource type to unique id) of all the AWS resources that were deployed from the CloudFormation template.
 
 .. image:: ./images/7_cft_resources.png
   :scale: 50%
 
-- Click the Events tab. The F5 CloudFormation template records every succesfull or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.
+- Click the Events tab. The F5 CloudFormation template records every successful or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.
 
 .. image:: ./images/8_cft_events.png
   :scale: 50%
 
-- Click on the Parameters tab. We used terraform to stuff all of the necesary parameters into the CloudFormation template. Here you can see the CloudFormation parameter name and value provided.
+- Click on the Parameters tab. We used terraform to stuff all of the necessary parameters into the CloudFormation template. Here you can see the CloudFormation parameter name and value provided.
 
 .. image:: ./images/9_cft_parameters.png
   :scale: 50%
@@ -118,13 +118,13 @@ Navigate to Services => Compute => EC2 => LOAD BALANCING => Load Balancers. In t
 
 - Highlight the ‘Description’ tab. Note:
 
-  - Scheme: internate-facing
+  - Scheme: internet-facing
   - Type: Classic
 
 .. image:: ./images/16_elb_instances.png
   :scale: 50%
 
-- Click the "Health Check" tab => [Edit health Check]. The classic load-balaner is limited to basic health checks.
+- Click the "Health Check" tab => [Edit health Check]. The classic load-balancer is limited to basic health checks.
 
 .. image:: ./images/17_elb_health_checks_limited.png
   :scale: 50%
@@ -134,7 +134,7 @@ Navigate to Services => Compute => EC2 => LOAD BALANCING => Load Balancers. In t
 .. image:: ./images/18_elb_listeners_limited.png
   :scale: 50%
 
-Navigate to Services => Compute => EC2 => AUTO SCALING => Auto Scaling Group. Highligh the "Activity History" tab. You can the autoscale WAF CloudFormation template created an auto scaling group. Read the Description and Cause.
+Navigate to Services => Compute => EC2 => AUTO SCALING => Auto Scaling Group. Highlight the "Activity History" tab. You can the autoscale WAF CloudFormation template created an auto scaling group. Read the Description and Cause.
 
 .. image:: ./images/19_asg_activity.png
   :scale: 50%
@@ -144,7 +144,7 @@ Navigate to Services => Compute => EC2 => AUTO SCALING => Auto Scaling Group. Hi
 .. image:: ./images/20_asg_scaling_policies.png
   :scale: 50%
 
-- Click the "Instances" tab. The single instance running the F5 WAF. Notice the instance is "Protectecd from: Scale in". This means that AWS will guarantee a minimum of one F5 WAF instance is running at all times. If someone where to accidently stop or terminate an instance, this policy would automatically trigger the cration of a new one.
+- Click the "Instances" tab. The single instance running the F5 WAF. Notice the instance is "Protected from: Scale in". This means that AWS will guarantee a minimum of one F5 WAF instance is running at all times. If someone where to accidentally stop or terminate an instance, this policy would automatically trigger the creation of a new one.
 
 .. image:: ./images/21_asg_instances.png
   :scale: 50%

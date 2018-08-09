@@ -80,7 +80,7 @@ The "linux-low" security policy is attached to this virtual server.
 .. image:: ./images/9_waf_policy_enabled.png
   :scale: 50%
 
-From the Super-NetOps terminal run "lab-info" and copy the value for WAF ELB -> URL. Open a new browser tab and HTTPS to the WAF ELB URL. Your sample applicaiton is protected behind an F5 WAF.
+From the Super-NetOps terminal run "lab-info" and copy the value for WAF ELB -> URL. Open a new browser tab and HTTPS to the WAF ELB URL. Your sample application is protected behind an F5 WAF.
 
 .. image:: ./images/11_terraform_waf_url.png
   :scale: 50%

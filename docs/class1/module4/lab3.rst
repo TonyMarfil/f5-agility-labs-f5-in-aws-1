@@ -7,7 +7,7 @@ From the Super-NetOps terminal, run the handy lab-info utility. Confirm that "MC
 
    lab-info
 
-From the HTTPS Configuration Utility (Web UI) of the active Big-IPX device: Device Management => Devices. [Force Offline]. Cliick [OK] to confirm.
+From the HTTPS Configuration Utility (Web UI) of the active Big-IPX device: Device Management => Devices. [Force Offline]. Click [OK] to confirm.
 
 .. image:: ./images/1_force_standby.png
   :scale: 50%

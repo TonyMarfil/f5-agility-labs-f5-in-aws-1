@@ -39,9 +39,9 @@ From your Super-NetOps terminal, there are multiple ways to see your AWS access 
 
 Copy your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY values. **Save in notepad or your preferred text editor / note taking method for later use.**
 
-Create a new cloud_logger iApp. HTTPS to the Configuration Utiltiy (Web UI) of Big-IP1 (assumming that is the ACTIVE device and not STANDBY).
+Create a new cloud_logger iApp. HTTPS to the Configuration Utility (Web UI) of Big-IP1 (assuming that is the ACTIVE device and not STANDBY).
 
-iApps => Application Srvices => Name: `cloudwatch`. Template: `f5.cloud_logger.v1.0.0`. Click [Finished].
+iApps => Application Services => Name: `cloudwatch`. Template: `f5.cloud_logger.v1.0.0`. Click [Finished].
 
 .. image:: ./images/4_create_iapp.png
   :scale: 50%
@@ -64,7 +64,7 @@ iApps => Application Srvices => Name: `cloudwatch`. Template: `f5.cloud_logger.v
 +--------------------------------------------------------------+----------------------------------+
 | What is the AWS CloudWatch Logs group name?                  | log group name i.e. user55labcom |
 +--------------------------------------------------------------+----------------------------------+
-| What is the AWS CloudWatrch Logs group's stream name?        | log-stream                       |
+| What is the AWS CloudWatch Logs group's stream name?         | log-stream                       |
 +--------------------------------------------------------------+----------------------------------+
 | Do you want to enable LTM Request logging?                   | Enable LTM request logging       |
 +--------------------------------------------------------------+----------------------------------+
@@ -87,7 +87,7 @@ HTTPS to the Configuration Utility (Web UI) of Big-IP2 (if that is the standby).
 .. image:: ./images/8_standby_iapp_sync.png
   :scale: 50%
 
-HTTPS to the Configuration Utiltiy (Web UI) of Big-IP1 (assumming that is the ACTIVE device and not STANDBY).
+HTTPS to the Configuration Utility (Web UI) of Big-IP1 (assuming that is the ACTIVE device and not STANDBY).
 
 iApps => Application Services => virtual_server1.
 
@@ -95,7 +95,7 @@ iApps => Application Services => virtual_server1.
 
    Before completing the next few steps, DISABLE STRICT UPDATES for the f5.tcp.v1.0.0rc2 iApp named virtual_server1 in our example.
 
-Local Traffic => Virutal Servers => virtual_server1_vs.10.0.1.x.
+Local Traffic => Virtual Servers => virtual_server1_vs.10.0.1.x.
 
 - Choose "Advanced" from the dropdown.
 - Select SSL Profile(Client): clientssl
@@ -116,7 +116,7 @@ Click [Update].
 .. image:: ./images/12_1st_virtual_update.png
   :scale: 50%
 
-Do the same for the second virtual server. Local Traffic => Virutal Servers => virtual_server1_vs.10.0.1.x.
+Do the same for the second virtual server. Local Traffic => Virtual Servers => virtual_server1_vs.10.0.1.x.
 
 - Choose "Advanced" from the dropdown.
 - Select SSL Profile(Client): clientssl
@@ -148,6 +148,10 @@ HTTPS to the Elastic IP to test request logging. Refresh with [F5] key for 15 se
 .. image:: ./images/17_refresh_https.png
   :scale: 50%
 
+.. attention::
+
+   Some lab testers reported an incompatibility issue with Mozilla Firefox on Linux and the AWS CloudWatch console. If Firefox doesn't render the CloudWatch console, switch to Google Chrome for this part of the lab.
+   
 From the AWS Console, Services => Management Tools => CloudWatch => Log Groups. Select your log group and log-stream.
 
 .. image:: ./images/18_log-stream.png
@@ -163,7 +167,7 @@ Expand a log entry to see more detail.
 .. image:: ./images/19_log-stream_expand.png
   :scale: 50%
 
-Copy the CLIENT_IP of a reuqest and use this CLIENT_IP in the "Filter events" search filter. In production you would filter search results by attributes such as CLIENT-IP to home in on relevant logs.
+Copy the CLIENT_IP of a request and use this CLIENT_IP in the "Filter events" search filter. In production you would filter search results by attributes such as CLIENT-IP to home in on relevant logs.
 
 .. image:: ./images/20_log-stream_filter1.png
   :scale: 50%

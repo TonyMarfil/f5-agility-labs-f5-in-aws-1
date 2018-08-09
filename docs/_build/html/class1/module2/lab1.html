@@ -93,14 +93,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Infrastructure As Code</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="module2.html">2.2. Exploring AWS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">2.3. Explore the F5 Big-IP Virtual Editions Deployed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">2.4. Create a Virtual Server to Protect your Web Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">2.5. Declarative Virtual Server with Application Services Extension 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. F5 Networks IPSec VPN to AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module7/module7.html">2.7. Big-IQ 6.0 and Application Templates for AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module8/module8.html">2.8. Big-IP Cloud Edition:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module9/module9.html">2.9. Create a Service Scaling Group Application:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_10/module_10.html">2.10. Test Autoscaling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_11/module_11.html">2.11. Clean up environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">2.4. Extending and Securing your Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">2.5. Logging to CloudWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. Autoscale WAF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module7/module7.html">2.7. Clean Up Environment</a></li>
 </ul>
 </li>
 </ul>
@@ -130,7 +126,7 @@
 <p>Your instructor will share a view of the Big-IQ License Manager hosted on AWS. The class will see all of the instances dynamically licensed through Big-IQ.</p>
 <p>When deploying to AWS you have flexible licensing options:</p>
 <ul class="simple">
-<li>Bring York Own License (BYOL) - can be transferred from one virtual edition environment to another (i.e. VMWare =&gt; AWS)</li>
+<li>Bring Your Own License (BYOL) - Can be transferred from one Virtual Edition environment to another (i.e. VMWare =&gt; AWS)</li>
 <li>Hourly - Launch an instance from the AWS self-service Marketplace portal and pay only for metered hourly use.</li>
 <li>Subscription - <strong>This is the option used in this lab</strong>. Every Big-IP launched will query the Big-IQ License Manager for a license. From Big-IQ we can revoke licenses as well.</li>
 <li>Enterprise License Agreement</li>
@@ -175,7 +171,7 @@
 <p>Navigate to Services =&gt; Management Tools =&gt; CloudFormation. In the search field type your user account name (i.e user99). You should see your CloudFormation deployment details. You launched two CloudFormation templates.</p>
 <a class="reference internal image-reference" href="../../_images/3_cloudformation_stacks.png"><img alt="../../_images/3_cloudformation_stacks.png" src="../../_images/3_cloudformation_stacks.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
-<li>ha-userxxf5labcom-vpc-xxxxxxxx - Is the Cross-Availabilty-Zone deployment well documented in the F5 Github repository:
+<li>ha-userxxf5labcom-vpc-xxxxxxxx - Is the Cross-Availability-Zone deployment well documented in the F5 Github repository:
 <a class="reference external" href="https://github.com/F5Networks/f5-aws-cloudformation/tree/master/supported/failover/across-net/via-api/3nic/existing-stack/bigiq">https://github.com/F5Networks/f5-aws-cloudformation/tree/master/supported/failover/across-net/via-api/3nic/existing-stack/bigiq</a></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/cft_cross-az-ha.png"><img alt="../../_images/cft_cross-az-ha.png" src="../../_images/cft_cross-az-ha.png" style="width: 471.0px; height: 320.0px;" /></a>
@@ -185,7 +181,7 @@
 </ul>
 <a class="reference internal image-reference" href="../../_images/cft_autoscale_waf.png"><img alt="../../_images/cft_autoscale_waf.png" src="../../_images/cft_autoscale_waf.png" style="width: 485.0px; height: 310.0px;" /></a>
 <ul class="simple">
-<li>Click the Events tab. The F5 CloudFormation template records every succesfull or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.</li>
+<li>Click the Events tab. The F5 CloudFormation template records every successful or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/5_cft_events.png"><img alt="../../_images/5_cft_events.png" src="../../_images/5_cft_events.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
@@ -193,15 +189,15 @@
 </ul>
 <a class="reference internal image-reference" href="../../_images/6_cft_outputs.png"><img alt="../../_images/6_cft_outputs.png" src="../../_images/6_cft_outputs.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
-<li>Click on the Resources tab. Here we see a map (resource type to unqique id) of all the AWS resources that were deployed from the CloudFormation template.</li>
+<li>Click on the Resources tab. Here we see a map (resource type to unique id) of all the AWS resources that were deployed from the CloudFormation template.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/7_cft_resources.png"><img alt="../../_images/7_cft_resources.png" src="../../_images/7_cft_resources.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
-<li>Click the Events tab. The F5 CloudFormation template records every succesfull or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.</li>
+<li>Click the Events tab. The F5 CloudFormation template records every successful or failed event here. Look for the final “CREATE_COMPLETE” at the top. This indicates all went well.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/8_cft_events.png"><img alt="../../_images/8_cft_events.png" src="../../_images/8_cft_events.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
-<li>Click on the Parameters tab. We used terraform to stuff all of the necesary parameters into the CloudFormation template. Here you can see the CloudFormation parameter name and value provided.</li>
+<li>Click on the Parameters tab. We used terraform to stuff all of the necessary parameters into the CloudFormation template. Here you can see the CloudFormation parameter name and value provided.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/9_cft_parameters.png"><img alt="../../_images/9_cft_parameters.png" src="../../_images/9_cft_parameters.png" style="width: 960.0px; height: 540.0px;" /></a>
 </div>
@@ -227,28 +223,28 @@
 <a class="reference internal image-reference" href="../../_images/15_elb_description.png"><img alt="../../_images/15_elb_description.png" src="../../_images/15_elb_description.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
 <li>Highlight the ‘Description’ tab. Note:<ul>
-<li>Scheme: internate-facing</li>
+<li>Scheme: internet-facing</li>
 <li>Type: Classic</li>
 </ul>
 </li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/16_elb_instances.png"><img alt="../../_images/16_elb_instances.png" src="../../_images/16_elb_instances.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
-<li>Click the “Health Check” tab =&gt; [Edit health Check]. The classic load-balaner is limited to basic health checks.</li>
+<li>Click the “Health Check” tab =&gt; [Edit health Check]. The classic load-balancer is limited to basic health checks.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/17_elb_health_checks_limited.png"><img alt="../../_images/17_elb_health_checks_limited.png" src="../../_images/17_elb_health_checks_limited.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
 <li>Click the “Listeners” tab =&gt; [Edit]. The classic load-balancer is limited to HTTP, HTTPS, TCP and SSL (no UDP).</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/18_elb_listeners_limited.png"><img alt="../../_images/18_elb_listeners_limited.png" src="../../_images/18_elb_listeners_limited.png" style="width: 960.0px; height: 540.0px;" /></a>
-<p>Navigate to Services =&gt; Compute =&gt; EC2 =&gt; AUTO SCALING =&gt; Auto Scaling Group. Highligh the “Activity History” tab. You can the autoscale WAF CloudFormation template created an auto scaling group. Read the Description and Cause.</p>
+<p>Navigate to Services =&gt; Compute =&gt; EC2 =&gt; AUTO SCALING =&gt; Auto Scaling Group. Highlight the “Activity History” tab. You can the autoscale WAF CloudFormation template created an auto scaling group. Read the Description and Cause.</p>
 <a class="reference internal image-reference" href="../../_images/19_asg_activity.png"><img alt="../../_images/19_asg_activity.png" src="../../_images/19_asg_activity.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
 <li>Click the “Scaling Policies” tab. Read through the polices to understand how the autoscale WAF deployment is programmed to both scale out during a surge and scale in when the surge subsides.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/20_asg_scaling_policies.png"><img alt="../../_images/20_asg_scaling_policies.png" src="../../_images/20_asg_scaling_policies.png" style="width: 960.0px; height: 540.0px;" /></a>
 <ul class="simple">
-<li>Click the “Instances” tab. The single instance running the F5 WAF. Notice the instance is “Protectecd from: Scale in”. This means that AWS will guarantee a minimum of one F5 WAF instance is running at all times. If someone where to accidently stop or terminate an instance, this policy would automatically trigger the cration of a new one.</li>
+<li>Click the “Instances” tab. The single instance running the F5 WAF. Notice the instance is “Protected from: Scale in”. This means that AWS will guarantee a minimum of one F5 WAF instance is running at all times. If someone where to accidentally stop or terminate an instance, this policy would automatically trigger the creation of a new one.</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/21_asg_instances.png"><img alt="../../_images/21_asg_instances.png" src="../../_images/21_asg_instances.png" style="width: 960.0px; height: 540.0px;" /></a>
 </div>
